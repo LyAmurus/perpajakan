@@ -108,11 +108,7 @@
                 <caption>Berisi daftar pajak masyarakat yang telah diinputkan</caption>
                 <thead>
                     <tr>
-<<<<<<< HEAD
                         <th scope="col">ID Cardge</th>
-=======
-                        <th scope="col">ID CARD</th>
->>>>>>> d7c8f558bdc5cadfd4c7c981572a5cf48b88f3e0
                         <th scope="col">Nama</th>
                         <th scope="col">Gaji</th>
                         <th scope="col">Persentase Pajak %</th>
