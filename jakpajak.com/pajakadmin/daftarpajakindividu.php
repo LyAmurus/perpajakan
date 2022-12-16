@@ -144,7 +144,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     
-                    <!--FORM-->
+                    <!--FORM--->
                     <form action="./editdata/editpajakindividu.php" method="POST">
                         <input type="hidden" name="id" value="<?= $data_individu['id']?>">
                     <div class="modal-body">
