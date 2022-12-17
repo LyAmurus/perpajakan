@@ -84,7 +84,7 @@
                                 </button>
                                 <div class="collapse" id="account-collapse">
                                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a>
+                                        <li><a href="profile/profil.html" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a>
                                         </li>
                                         <li><a href="#"
                                                 class="link-dark d-inline-flex text-decoration-none rounded">Profile Settings</a>
@@ -212,6 +212,11 @@
             </div>
         </nav>
     </main>
+
+    <footer>
+        <!--jelas buat footer-->
+    </footer>
+    
 </body>
 
 </html>
