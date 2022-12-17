@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db = 'coba6';
+$db = 'perpajakan';
 $usr = 'root';
 $pwd = '';
 
