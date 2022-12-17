@@ -116,7 +116,7 @@
         </nav>
     </header>
 
-    <main>
+    <main class="mt-5 mb-5">
         <nav class="mt-5 container-fluid">
             <table class="table table-hover table-striped-columns caption-top">
                 <caption>Berisi daftar pajak masyarakat yang telah diinputkan</caption>
