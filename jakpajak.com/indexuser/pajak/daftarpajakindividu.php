@@ -1,6 +1,6 @@
 <?php
     include_once("konek.php");
-    $result = mysqli_query($conn, "SELECT * FROM pjkpenghasilan");
+    $result = mysqli_query($conn, "SELECT * FROM data_pajak");
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +49,7 @@
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="border-top"></li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="../index2.html">Home</a>
+                                <a class="nav-link active" aria-current="page" href="../homeuser.html">Home</a>
                             </li>
                             <li class="border-top"></li>
                             <li class="mb-1 text-info">
@@ -61,7 +61,7 @@
                                 </button>
                                 <div class="collapse" id="dashboard-collapse">
                                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                        <li><a href="daftarpajakindividu.html"
+                                        <li><a href="daftarpajakindividu.php"
                                                 class="link-dark d-inline-flex text-decoration-none rounded">Daftar
                                                 Pajak
                                                 Penghasilan</a>
@@ -163,7 +163,7 @@
                         <td><?php echo $no++?></td>
                         <td><?php echo $user_data['nama'] ?></td>
                         <td>IDR.<?php echo $user_data['gaji'] ?></td>
-                        <td><?php echo $user_data['persenpjk'] ?>%</td>
+                        <td><?php echo $user_data['persentase'] ?>%</td>
                         <td>IDR.<?php echo $user_data['pajak'] ?></td>
                         <td>
                             <a class='btn btn-warning' href="#" data-bs-toggle="modal"
@@ -250,11 +250,11 @@
             <div class="d-grid gap-2 col-6 mx-auto">
                 <a class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#adddata">Tambah
                     Data</a>
-                <a class="btn btn-warning" type="button" href="../index2.html">Back</a>
+                <a class="btn btn-warning" type="button" href="../homeuser.html">Back</a>
             </div>
             <!-- <div class="d-grid gap-2 col-6 mx-auto">
                 <a class="btn btn-success" type="button" href="inputdata/inputpajakindividu.php">Tambah Data</a>
-                <a class="btn btn-warning" type="button" href="../index2.html">Back</a>
+                <a class="btn btn-warning" type="button" href="../homeuser.html">Back</a>
             </div> -->
         </nav>
     </main>
