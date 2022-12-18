@@ -8,7 +8,7 @@ if( isset($_GET['id']) ){
     $id = $_GET['id'];
 
     // buat query hapus
-    $data = "DELETE FROM pjkpenghasilan WHERE id=$id";
+    $data = "DELETE FROM data_pajak WHERE id=$id";
     $query = mysqli_query($conn, $data);
 
     if($query){
