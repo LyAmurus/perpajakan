@@ -64,7 +64,7 @@
                                 </button>
                                 <div class="collapse" id="dashboard-collapse">
                                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                        <li><a href="daftarpajakindividu.html"
+                                        <li><a href="daftarpajakindividu.php"
                                                 class="link-dark d-inline-flex text-decoration-none rounded">Daftar
                                                 Pajak
                                                 Penghasilan</a>
