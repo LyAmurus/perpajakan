@@ -1,3 +1,7 @@
+<?php
+    include_once("./connectdata/conn.php");
+    $result = mysqli_query($conn, "SELECT * FROM data_pbb");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,71 +97,160 @@
             </div>
         </nav>
     </header>
-
     <main class="mt-3 mb-5">
         <nav class="mt-5 container-fluid">
             <table class="table table-hover table-striped-columns caption-top">
                 <caption>Berisi daftar pajak tanah dan bangunan yang telah diinputkan</caption>
                 <thead>
                     <tr>
-                        <th scope="col">ID Properti</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Nama Pemilik</th>
-                        <th scope="col">Alamat</th>
-                        <th scope="col">Luas Tanah</th>
-                        <th scope="col">Provinsi</th>
-                        <th scope="col">Persentase Pajak Total</th>
-                        <th scope="col">Pajak Dalam Rupiah</th>
+                        <th scope="col">Luas Tanah (m^2)</th>
+                        <th scope="col">Luas Bangunan (m^2)</th>
+                        <th scope="col">Harga Tanah/m^2</th>
+                        <th scope="col">Harga Bangunan/m^2</th>
+                        <th scope="col">NJOP</th>
+                        <th scope="col">NJKP</th>
+                        <th scope="col">PBB</th>
                         <th scope="col">Perintah</th>
                     </tr>
                 </thead>
+                <?php
+                    $no = 1;
+                    while ($user_data = mysqli_fetch_array($result)):
+                ?>
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td><?php echo $no++?></td>
+                        <td><?php echo $user_data['nama'] ?></td>
+                        <td><?php echo $user_data['tanah'] ?></td>
+                        <td><?php echo $user_data['bangunan'] ?></td>
+                        <td>IDR.<?php echo $user_data['harga_tanah'] ?></td>
+                        <td>IDR.<?php echo $user_data['harga_bangunan'] ?></td>
+                        <td>IDR.<?php echo $user_data['njop'] ?></td>
+                        <td>IDR.<?php echo $user_data['njkp'] ?></td>
+                        <td>IDR.<?php echo $user_data['pbb'] ?></td>
                         <td>
-                            <a class='btn btn-warning' href="editdata/editpajakpbb.html">Edit</a>
-                            <a class='btn btn-danger' >Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@mdo</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>
-                            <a class='btn btn-warning' href="editdata/editpajakpbb.html">Edit</a>
-                            <a class='btn btn-danger' >Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry the Bird</td>
-                        <td>Thornton</td>
-                        <td>@twitter</td>
-                        <td>@mdo</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>
-                            <a class='btn btn-warning' href="editdata/editpajakpbb.html">Edit</a>
-                            <a class='btn btn-danger' >Delete</a>
+                            <a class='btn btn-warning' href="#" data-bs-toggle="modal"
+                                data-bs-target="#updata<?php echo $no ?>">Edit</a>
+                            <!-- <a class='btn btn-danger' href="deletedata/deletepajakindividu.php?id=<?php echo $user_data['id']?>">Delete</a> -->
+                            <a href="./deletedata/deletepajakpbb.php?id=<?=$user_data['id']?>" class="btn btn-danger" onclick="return confirm('Yakin nih di hapus?')">Hapus</a>
                         </td>
                     </tr>
                 </tbody>
+
+                <!--FORM UPDATE-->
+                <div class="modal fade" id="updata<?= $no ?>" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Data</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <!--FORM-->
+                            <form action="./editdata/editpajakpbb.php" method="POST">
+                                <input type="hidden" name="id" value="<?= $user_data['id']?>">
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Nama</label>
+                                        <input type="text" class="form-control" name="nama"
+                                            value="<?=$user_data['nama']?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Luas Tanah (m^2)</label>
+                                        <input type="text" class="form-control" name="tanah"
+                                            value="<?=$user_data['tanah']?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Luas Bangunan (m^2)</label>
+                                        <input type="text" class="form-control" name="bangunan"
+                                            value="<?=$user_data['bangunan']?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Harga Tanah/m^2</label>
+                                        <input type="text" class="form-control" name="harga_tanah"
+                                            value="<?=$user_data['harga_tanah']?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Harga Bangunan/m^2</label>
+                                        <input type="text" class="form-control" name="harga_bangunan"
+                                            value="<?=$user_data['harga_bangunan']?>">
+                                    </div>
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-success" name="update">Update</button>
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--FORM AKHIR UPDATE-->
+                <?php endwhile; ?>
             </table>
-            <div class="d-grid gap-2 col-6 mx-auto">
-                <a class="btn btn-success" type="button" href="inputdata/inputpajakpbb.html">Tambah Data</a>
-                <a class="btn btn-warning" type="button" href="../index2.html">Back</a>
+
+            <!--FORM AWAL DATA-->
+            <div class="modal fade" id="adddata" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Data</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <!--FORM-->
+                        <form action="inputdata/inputpajakpbb.php" method="POST">
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label class="form-label">Nama</label>
+                                    <input type="text" class="form-control" name="nama">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Luas Tanah (m^2)</label>
+                                    <input type="text" class="form-control" name="tanah">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Luas Bangunan (m^2)</label>
+                                    <input type="text" class="form-control" name="bangunan">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Harga Tanah/m^2</label>
+                                    <input type="text" class="form-control" name="harga_tanah">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Harga Bangunan/m^2</label>
+                                    <input type="text" class="form-control" name="harga_bangunan">
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success" name="inputpajakpbb">Add</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
             </div>
+            <!--FORM AKHIR DATA-->
+
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <a class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#adddata">Tambah
+                    Data</a>
+                <a class="btn btn-warning" type="button" href="../homeuser.html">Back</a>
+            </div>
+            <!-- <div class="d-grid gap-2 col-6 mx-auto">
+                <a class="btn btn-success" type="button" href="inputdata/inputpajakindividu.php">Tambah Data</a>
+                <a class="btn btn-warning" type="button" href="../homeuser.html">Back</a>
+            </div> -->
         </nav>
     </main>
+    
     
 
     <footer class="bg-light text-center text-white footer mt-auto">
@@ -242,7 +335,6 @@
         </div>
         <!-- Copyright -->
     </footer>
-    
 </body>
 
 </html>
