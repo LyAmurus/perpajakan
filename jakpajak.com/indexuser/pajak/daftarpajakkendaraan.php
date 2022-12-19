@@ -1,6 +1,9 @@
 <?php
 include_once("konek.php");
-$result = mysqli_query($conn, "SELECT * FROM data_pbb");
+$result = mysqli_query($conn, "SELECT * FROM data_kendaraan_motor1");
+$result2 = mysqli_query($conn, "SELECT * FROM data_kendaraan_motor5");
+$result3 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil1");
+$result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5");
 ?>
 
 <!DOCTYPE html>
@@ -16,8 +19,13 @@ $result = mysqli_query($conn, "SELECT * FROM data_pbb");
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+<<<<<<< HEAD
+        </script>
+    <title>Document</title>
+=======
     </script>
     <title>Pajak PBB</title>
+>>>>>>> e56ca75853f4406ae118680359b1dc8bf40093b7
 </head>
 
 
@@ -146,7 +154,7 @@ $result = mysqli_query($conn, "SELECT * FROM data_pbb");
         <nav class="mt-5 container-fluid">
             <!-- tombol pertama -->
             <div id="nurunin-mb-1" class="d-grid gap-2 col-6 mx-auto mb-4 pt-4">
-                <button onclick="showHidden('show-motor-1', 'tambah-data-1', 'nurunin-mb-1')" class="btn btn-success" type="button">Motor
+                <button onclick="showHidden('show-motor-1', 'tambah-data-1', 'nurunin-mb-1')" class="btn btn-primary" type="button">Motor
                     1 Tahun</button>
             </div>
 
@@ -156,18 +164,73 @@ $result = mysqli_query($conn, "SELECT * FROM data_pbb");
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Nama Pemilik</th>
-                        <th scope="col">Luas Tanah (m^2)</th>
-                        <th scope="col">Luas Bangunan (m^2)</th>
-                        <th scope="col">Harga Tanah/m^2</th>
-                        <th scope="col">Harga Bangunan/m^2</th>
-                        <th scope="col">NJOP</th>
-                        <th scope="col">NJKP</th>
-                        <th scope="col">PBB</th>
+                        <th scope="col">Harga Jual Motor</th>
+                        <th scope="col">Nilai Jual Motor</th>
+                        <th scope="col">Pajak</th>
                         <th scope="col">Perintah</th>
                     </tr>
                 </thead>
-                
+                <?php
+                    $no = 1;
+                    while ($user_data = mysqli_fetch_array($result)):
+                ?>
+                <tbody>
+                    <tr>
+                        <td><?= $no++?></td>
+                        <td><?= $user_data['nama'] ?></td>
+                        <td>IDR.<?= $user_data['hjm'] ?></td>
+                        <td>IDR.<?= $user_data['njkb'] ?></td>
+                        <td>IDR.<?= $user_data['pajak'] ?></td>
+                        <td>
+                            <a class='btn btn-warning' href="#" data-bs-toggle="modal"
+                                data-bs-target="#updata<?php echo $no ?>">Edit</a>
+                            <a class='btn btn-danger' href="./deletedata/pajakkendaraan/deletemotor1.php?id=<?= $user_data['id']?>" onclick="return confirm('Yakin ingin hapus?')">Delete</a>
+                            <!-- <a onclick=delete_data(<?=$user_data['id']?>) class='btn btn-danger'>Delete</a> -->
+                        </td>
+                    </tr>
+                </tbody>
+                        <!--FORM UPDATE-->
+                <div class="modal fade" id="updata<?= $no ?>" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Data</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
 
+                            <!--FORM-->
+                            <form action="./editdata/pajakkendaraan/editmotor1.php" method="POST">
+                                <input type="hidden" name="id" value="<?= $user_data['id']?>">
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Nama Pemilik</label>
+                                        <input type="text" class="form-control" name="nama"
+                                            value="<?=$user_data['nama']?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Harga Jual Motor</label>
+                                        <input type="text" class="form-control" name="hjm"
+                                            value="<?=$user_data['hjm']?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Nilai Jual Motor</label>
+                                        <input type="text" class="form-control" name="njkb"
+                                            value="<?=$user_data['njkb']?>">
+                                    </div>
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-success" name="update">Update</button>
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--FORM AKHIR UPDATE-->
+                <?php endwhile; ?>
             </table>
 
             <!--FORM AWAL DATA-->
@@ -181,32 +244,24 @@ $result = mysqli_query($conn, "SELECT * FROM data_pbb");
                         </div>
 
                         <!--FORM-->
-                        <form action="inputdata/inputpajakpbb.php" method="POST">
+                        <form action="./inputdata/pajakkendaraan/inputmotor1.php" method="POST">
                             <div class="modal-body">
                                 <div class="mb-3">
-                                    <label class="form-label">Nama</label>
+                                    <label class="form-label">Nama pemilik</label>
                                     <input type="text" class="form-control" name="nama">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Luas Tanah (m^2)</label>
-                                    <input type="text" class="form-control" name="tanah">
+                                    <label class="form-label">Harga Jual Motor</label>
+                                    <input type="text" class="form-control" name="hjm">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Luas Bangunan (m^2)</label>
-                                    <input type="text" class="form-control" name="bangunan">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Harga Tanah/m^2</label>
-                                    <input type="text" class="form-control" name="harga_tanah">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Harga Bangunan/m^2</label>
-                                    <input type="text" class="form-control" name="harga_bangunan">
+                                    <label class="form-label">Nilai Jual Motor</label>
+                                    <input type="text" class="form-control" name="njkb">
                                 </div>
 
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" name="inputpajakpbb">Add</button>
+                                <button type="submit" class="btn btn-success" name="inputpajakmotor1">Add</button>
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                             </div>
                         </form>
@@ -223,7 +278,7 @@ $result = mysqli_query($conn, "SELECT * FROM data_pbb");
 
             <!-- tombol kedua -->
             <div id="nurunin-mb-2" class="d-grid gap-2 col-6 mx-auto mb-4" onclick="showHidden('show-motor-5', 'tambah-data-2', 'nurunin-mb-2')">
-                <a class="btn btn-success" type="button">Motor 5 Tahun</a>
+                <a class="btn btn-primary" type="button">Motor 5 Tahun</a>
             </div>
 
             <table id="show-motor-5" class="table table-hover table-striped-columns caption-top" style="display: none;">
@@ -232,60 +287,32 @@ $result = mysqli_query($conn, "SELECT * FROM data_pbb");
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Nama Pemilik</th>
-                        <th scope="col">Luas Tanah (m^2)</th>
-                        <th scope="col">Luas Bangunan (m^2)</th>
-                        <th scope="col">Harga Tanah/m^2</th>
-                        <th scope="col">Harga Bangunan/m^2</th>
-                        <th scope="col">NJOP</th>
-                        <th scope="col">NJKP</th>
-                        <th scope="col">PBB</th>
+                        <th scope="col">Nilai Jual Motor</th>
+                        <th scope="col">Pajak</th>
                         <th scope="col">Perintah</th>
                     </tr>
                 </thead>
                 <?php
-                $no = 1;
-                while ($user_data = mysqli_fetch_array($result)):
+                    $no = 1;
+                    while ($user_data = mysqli_fetch_array($result2)):
                 ?>
                 <tbody>
                     <tr>
-                        <td>
-                            <?php echo $no++ ?>
-                        </td>
-                        <td>
-                            <?php echo $user_data['nama'] ?>
-                        </td>
-                        <td>
-                            <?php echo $user_data['tanah'] ?>
-                        </td>
-                        <td>
-                            <?php echo $user_data['bangunan'] ?>
-                        </td>
-                        <td>IDR.
-                            <?php echo $user_data['harga_tanah'] ?>
-                        </td>
-                        <td>IDR.
-                            <?php echo $user_data['harga_bangunan'] ?>
-                        </td>
-                        <td>IDR.
-                            <?php echo $user_data['njop'] ?>
-                        </td>
-                        <td>IDR.
-                            <?php echo $user_data['njkp'] ?>
-                        </td>
-                        <td>IDR.
-                            <?php echo $user_data['pbb'] ?>
-                        </td>
+                        <td><?= $no++?></td>
+                        <td><?= $user_data['nama'] ?></td>
+                        <td>IDR.<?= $user_data['njkb'] ?></td>
+                        <td>IDR.<?= $user_data['pajak'] ?></td>
                         <td>
                             <a class='btn btn-warning' href="#" data-bs-toggle="modal"
-                                data-bs-target="#updata<?php echo $no ?>">Edit</a>
-                            <!-- <a class='btn btn-danger' href="deletedata/deletepajakindividu.php?id=<?php echo $user_data['id'] ?>">Delete</a> -->
-                            <a onclick=delete_data(<?= $user_data['id'] ?>) class='btn btn-danger'>Delete</a>
+                                data-bs-target="#updata2<?php echo $no ?>">Edit</a>
+                            <a class='btn btn-danger' href="./deletedata/pajakkendaraan/deletemotor5.php?id=<?= $user_data['id']?>" onclick="return confirm('Yakin ingin hapus?')">Delete</a>
+                            <!-- <a onclick=delete_data(<?=$user_data['id']?>) class='btn btn-danger'>Delete</a> -->
                         </td>
                     </tr>
                 </tbody>
 
                 <!--FORM UPDATE-->
-                <div class="modal fade" id="updata<?= $no ?>" data-bs-backdrop="static" data-bs-keyboard="false"
+                <div class="modal fade" id="updata2<?= $no ?>" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -296,35 +323,21 @@ $result = mysqli_query($conn, "SELECT * FROM data_pbb");
                             </div>
 
                             <!--FORM-->
-                            <form action="./editdata/editpajakpbb.php" method="POST">
-                                <input type="hidden" name="id" value="<?= $user_data['id'] ?>">
+                            <form action="./editdata/pajakkendaraan/editmotor5.php" method="POST">
+                                <input type="hidden" name="id" value="<?= $user_data['id']?>">
                                 <div class="modal-body">
                                     <div class="mb-3">
-                                        <label class="form-label">Nama</label>
+                                        <label class="form-label">Nama Pemilik</label>
                                         <input type="text" class="form-control" name="nama"
-                                            value="<?= $user_data['nama'] ?>">
+                                            value="<?=$user_data['nama']?>">
                                     </div>
+                                   
                                     <div class="mb-3">
-                                        <label class="form-label">Luas Tanah (m^2)</label>
-                                        <input type="text" class="form-control" name="tanah"
-                                            value="<?= $user_data['tanah'] ?>">
+                                        <label class="form-label">Nilai Jual Motor</label>
+                                        <input type="text" class="form-control" name="njkb"
+                                            value="<?=$user_data['njkb']?>">
                                     </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Luas Bangunan (m^2)</label>
-                                        <input type="text" class="form-control" name="bangunan"
-                                            value="<?= $user_data['bangunan'] ?>">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Harga Tanah/m^2</label>
-                                        <input type="text" class="form-control" name="harga_tanah"
-                                            value="<?= $user_data['harga_tanah'] ?>">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Harga Bangunan/m^2</label>
-                                        <input type="text" class="form-control" name="harga_bangunan"
-                                            value="<?= $user_data['harga_bangunan'] ?>">
-                                    </div>
-
+                                    
                                 </div>
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-success" name="update">Update</button>
@@ -334,13 +347,12 @@ $result = mysqli_query($conn, "SELECT * FROM data_pbb");
                         </div>
                     </div>
                 </div>
-                
                 <!--FORM AKHIR UPDATE-->
                 <?php endwhile; ?>
             </table>
 
             <!--FORM AWAL DATA-->
-            <div class="modal fade" id="adddata" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            <div class="modal fade" id="adddata2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -350,52 +362,38 @@ $result = mysqli_query($conn, "SELECT * FROM data_pbb");
                         </div>
 
                         <!--FORM-->
-                        <form action="inputdata/inputpajakpbb.php" method="POST">
+                        <form action="./inputdata/pajakkendaraan/inputmotor5.php" method="POST">
                             <div class="modal-body">
                                 <div class="mb-3">
-                                    <label class="form-label">Nama</label>
+                                    <label class="form-label">Nama pemilik</label>
                                     <input type="text" class="form-control" name="nama">
                                 </div>
+    
                                 <div class="mb-3">
-                                    <label class="form-label">Luas Tanah (m^2)</label>
-                                    <input type="text" class="form-control" name="tanah">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Luas Bangunan (m^2)</label>
-                                    <input type="text" class="form-control" name="bangunan">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Harga Tanah/m^2</label>
-                                    <input type="text" class="form-control" name="harga_tanah">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Harga Bangunan/m^2</label>
-                                    <input type="text" class="form-control" name="harga_bangunan">
+                                    <label class="form-label">Nilai Jual Motor</label>
+                                    <input type="text" class="form-control" name="njkb">
                                 </div>
 
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" name="inputpajakpbb">Add</button>
+                                <button type="submit" class="btn btn-success" name="inputpajakmotor5">Add</button>
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" name="inputpajakpbb">Add</button>
                             </div>
                         </form>
 
                     </div>
                 </div>
             </div>
-            <!-- FORM AKHIR DATA -->
+            <!--FORM AKHIR DATA-->
 
             <div class="d-grid gap-2 col-6 mx-auto mb-4">
-                <a style="display: none;" id="tambah-data-2" class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#adddata">Tambah
+                <a style="display: none;" id="tambah-data-2" class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#adddata2">Tambahh
                     Data</a>
             </div>
 
             <!-- tombol ketiga -->
             <div id="nurunin-mb-3" class="d-grid gap-2 col-6 mx-auto mb-4 pt-4">
-                <button onclick="showHidden('show-mobil-1', 'tambah-data-3', 'nurunin-mb-3')" class="btn btn-success" type="button">Mobil
+                <button onclick="showHidden('show-mobil-1', 'tambah-data-3', 'nurunin-mb-3')" class="btn btn-primary" type="button">Mobil
                     1 Tahun</button>
             </div>
 
@@ -405,21 +403,79 @@ $result = mysqli_query($conn, "SELECT * FROM data_pbb");
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Nama Pemilik</th>
-                        <th scope="col">Luas Tanah (m^2)</th>
-                        <th scope="col">Luas Bangunan (m^2)</th>
-                        <th scope="col">Harga Tanah/m^2</th>
-                        <th scope="col">Harga Bangunan/m^2</th>
-                        <th scope="col">NJOP</th>
-                        <th scope="col">NJKP</th>
-                        <th scope="col">PBB</th>
+                        <th scope="col">Harga Jual mobil</th>
+                        <th scope="col">Nilai Jual mobil</th>
+                        <th scope="col">Pajak</th>
                         <th scope="col">Perintah</th>
                     </tr>
                 </thead>
+                <?php
+                    $no = 1;
+                    while ($user_data = mysqli_fetch_array($result3)):
+                ?>
+                <tbody>
+                    <tr>
+                        <td><?= $no++?></td>
+                        <td><?= $user_data['nama'] ?></td>
+                        <td>IDR.<?= $user_data['hjm'] ?></td>
+                        <td>IDR.<?= $user_data['njkb'] ?></td>
+                        <td>IDR.<?= $user_data['pajak'] ?></td>
+                        <td>
+                            <a class='btn btn-warning' href="#" data-bs-toggle="modal"
+                                data-bs-target="#updata3<?php echo $no ?>">Edit</a>
+                            <a class='btn btn-danger' href="./deletedata/pajakkendaraan/deletemobil1.php?id=<?= $user_data['id']?>" onclick="return confirm('Yakin ingin hapus?')">Delete</a>
+                            <!-- <a onclick=delete_data(<?=$user_data['id']?>) class='btn btn-danger'>Delete</a> -->
+                        </td>
+                    </tr>
+                </tbody>
+            
 
+            <!--FORM UPDATE-->
+            <div class="modal fade" id="updata3<?= $no ?>" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Data</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <!--FORM-->
+                            <form action="./editdata/pajakkendaraan/editmobil1.php" method="POST">
+                                <input type="hidden" name="id" value="<?= $user_data['id']?>">
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Nama Pemilik</label>
+                                        <input type="text" class="form-control" name="nama"
+                                            value="<?=$user_data['nama']?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Harga Jual mobil</label>
+                                        <input type="text" class="form-control" name="hjm"
+                                            value="<?=$user_data['hjm']?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Nilai Jual mobil</label>
+                                        <input type="text" class="form-control" name="njkb"
+                                            value="<?=$user_data['njkb']?>">
+                                    </div>
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-success" name="update">Update</button>
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--FORM AKHIR UPDATE-->
+                <?php endwhile; ?>
             </table>
 
             <!--FORM AWAL DATA-->
-            <div class="modal fade" id="adddata" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            <div class="modal fade" id="adddata3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -429,36 +485,25 @@ $result = mysqli_query($conn, "SELECT * FROM data_pbb");
                         </div>
 
                         <!--FORM-->
-                        <form action="inputdata/inputpajakpbb.php" method="POST">
+                        <form action="./inputdata/pajakkendaraan/inputmobil1.php" method="POST">
                             <div class="modal-body">
                                 <div class="mb-3">
-                                    <label class="form-label">Nama</label>
+                                    <label class="form-label">Nama pemilik</label>
                                     <input type="text" class="form-control" name="nama">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Luas Tanah (m^2)</label>
-                                    <input type="text" class="form-control" name="tanah">
+                                    <label class="form-label">Harga Jual mobil</label>
+                                    <input type="text" class="form-control" name="hjm">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Luas Bangunan (m^2)</label>
-                                    <input type="text" class="form-control" name="bangunan">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Harga Tanah/m^2</label>
-                                    <input type="text" class="form-control" name="harga_tanah">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Harga Bangunan/m^2</label>
-                                    <input type="text" class="form-control" name="harga_bangunan">
+                                    <label class="form-label">Nilai Jual mobil</label>
+                                    <input type="text" class="form-control" name="njkb">
                                 </div>
 
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" name="inputpajakpbb">Add</button>
+                                <button type="submit" class="btn btn-success" name="inputpajakmobil1">Add</button>
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" name="inputpajakpbb">Add</button>
                             </div>
                         </form>
 
@@ -467,14 +512,14 @@ $result = mysqli_query($conn, "SELECT * FROM data_pbb");
             </div>
             <!--FORM AKHIR DATA-->
 
-            <div class="d-grid gap-2 col-6 mx-auto">
-                <a style="display: none;" id="tambah-data-3" class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#adddata">Tambah
+            <div class="d-grid gap-2 col-6 mx-auto mb-4">
+                <a style="display: none;" id="tambah-data-3" class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#adddata3">Tambahh
                     Data</a>
             </div>
 
             <!-- tombol ke empat -->    
             <div id="nurunin-mb-4" class="d-grid gap-2 col-6 mx-auto mb-4 pt-4">
-                <button onclick="showHidden('show-mobil-5', 'tambah-data-4', 'nurunin-mb-4')" class="btn btn-success" type="button">Mobil
+                <button onclick="showHidden('show-mobil-5', 'tambah-data-4', 'nurunin-mb-4')" class="btn btn-primary" type="button">Mobil
                     5 Tahun</button>
             </div>
 
@@ -484,21 +529,72 @@ $result = mysqli_query($conn, "SELECT * FROM data_pbb");
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Nama Pemilik</th>
-                        <th scope="col">Luas Tanah (m^2)</th>
-                        <th scope="col">Luas Bangunan (m^2)</th>
-                        <th scope="col">Harga Tanah/m^2</th>
-                        <th scope="col">Harga Bangunan/m^2</th>
-                        <th scope="col">NJOP</th>
-                        <th scope="col">NJKP</th>
-                        <th scope="col">PBB</th>
+                        <th scope="col">Nilai Jual Mobil</th>
+                        <th scope="col">Pajak</th>
                         <th scope="col">Perintah</th>
                     </tr>
                 </thead>
+                <?php
+                    $no = 1;
+                    while ($user_data = mysqli_fetch_array($result4)):
+                ?>
+                <tbody>
+                    <tr>
+                        <td><?= $no++?></td>
+                        <td><?= $user_data['nama'] ?></td>
+                        <td>IDR.<?= $user_data['njkb'] ?></td>
+                        <td>IDR.<?= $user_data['pajak'] ?></td>
+                        <td>
+                            <a class='btn btn-warning' href="#" data-bs-toggle="modal"
+                                data-bs-target="#updata4<?php echo $no ?>">Edit</a>
+                            <a class='btn btn-danger' href="./deletedata/pajakkendaraan/deletemobil5.php?id=<?= $user_data['id']?>" onclick="return confirm('Yakin ingin hapus?')">Delete</a>
+                            <!-- <a onclick=delete_data(<?=$user_data['id']?>) class='btn btn-danger'>Delete</a> -->
+                        </td>
+                    </tr>
+                </tbody>
 
+                <!--FORM UPDATE-->
+                <div class="modal fade" id="updata4<?= $no ?>" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Data</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <!--FORM-->
+                            <form action="./editdata/pajakkendaraan/editmobil5.php" method="POST">
+                                <input type="hidden" name="id" value="<?= $user_data['id']?>">
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Nama Pemilik</label>
+                                        <input type="text" class="form-control" name="nama"
+                                            value="<?=$user_data['nama']?>">
+                                    </div>
+                                   
+                                    <div class="mb-3">
+                                        <label class="form-label">Nilai Jual Mobil</label>
+                                        <input type="text" class="form-control" name="njkb"
+                                            value="<?=$user_data['njkb']?>">
+                                    </div>
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-success" name="update">Update</button>
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--FORM AKHIR UPDATE-->
+                <?php endwhile; ?>
             </table>
 
             <!--FORM AWAL DATA-->
-            <div class="modal fade" id="adddata" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            <div class="modal fade" id="adddata4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -508,36 +604,22 @@ $result = mysqli_query($conn, "SELECT * FROM data_pbb");
                         </div>
 
                         <!--FORM-->
-                        <form action="inputdata/inputpajakpbb.php" method="POST">
+                        <form action="./inputdata/pajakkendaraan/inputmobil5.php" method="POST">
                             <div class="modal-body">
                                 <div class="mb-3">
-                                    <label class="form-label">Nama</label>
+                                    <label class="form-label">Nama pemilik</label>
                                     <input type="text" class="form-control" name="nama">
                                 </div>
+    
                                 <div class="mb-3">
-                                    <label class="form-label">Luas Tanah (m^2)</label>
-                                    <input type="text" class="form-control" name="tanah">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Luas Bangunan (m^2)</label>
-                                    <input type="text" class="form-control" name="bangunan">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Harga Tanah/m^2</label>
-                                    <input type="text" class="form-control" name="harga_tanah">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Harga Bangunan/m^2</label>
-                                    <input type="text" class="form-control" name="harga_bangunan">
+                                    <label class="form-label">Nilai Jual Mobil</label>
+                                    <input type="text" class="form-control" name="njkb">
                                 </div>
 
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" name="inputpajakpbb">Add</button>
+                                <button type="submit" class="btn btn-success" name="inputpajakmobil5">Add</button>
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" name="inputpajakpbb">Add</button>
                             </div>
                         </form>
 
@@ -545,9 +627,9 @@ $result = mysqli_query($conn, "SELECT * FROM data_pbb");
                 </div>
             </div>
             <!--FORM AKHIR DATA-->
-            
-            <div class="d-grid gap-2 col-6 mx-auto">
-                <a style="display: none;" id="tambah-data-1" class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#adddata">Tambah
+
+            <div class="d-grid gap-2 col-6 mx-auto mb-4">
+                <a style="display: none;" id="tambah-data-4" class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#adddata4">Tambahh
                     Data</a>
             </div>
 

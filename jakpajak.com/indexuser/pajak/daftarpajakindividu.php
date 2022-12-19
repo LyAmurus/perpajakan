@@ -66,11 +66,11 @@
                                                 Pajak
                                                 Penghasilan</a>
                                         </li>
-                                        <li><a href="daftarpajakperusahaan.html"
+                                        <li><a href="daftarpajakperusahaan.php"
                                                 class="link-dark d-inline-flex text-decoration-none rounded">Daftar
                                                 Pajak
                                                 Perusahaan</a></li>
-                                        <li><a href="daftarpajakkendaraan.html"
+                                        <li><a href="daftarpajakkendaraan.php"
                                                 class="link-dark d-inline-flex text-decoration-none rounded">Daftar
                                                 Pajak
                                                 Kendaraan</a>

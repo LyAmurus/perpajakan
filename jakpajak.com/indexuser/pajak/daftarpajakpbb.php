@@ -59,12 +59,12 @@
                                 </button>
                                 <div class="collapse" id="dashboard-collapse">
                                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                        <li><a href="daftarpajakindividu.html" class="link-dark d-inline-flex text-decoration-none rounded">Daftar Pajak
+                                        <li><a href="daftarpajakindividu.php" class="link-dark d-inline-flex text-decoration-none rounded">Daftar Pajak
                                                 Penghasilan</a>
                                         </li>
-                                        <li><a href="daftarpajakperusahaan.html" class="link-dark d-inline-flex text-decoration-none rounded">Daftar Pajak
+                                        <li><a href="daftarpajakperusahaan.php" class="link-dark d-inline-flex text-decoration-none rounded">Daftar Pajak
                                                 Perusahaan</a></li>
-                                        <li><a href="daftarpajakkendaraan.html" class="link-dark d-inline-flex text-decoration-none rounded">Daftar Pajak
+                                        <li><a href="daftarpajakkendaraan.php" class="link-dark d-inline-flex text-decoration-none rounded">Daftar Pajak
                                                 Kendaraan</a>
                                         </li>
                                         <li><a href="daftarpajakpbb.php" class="link-dark d-inline-flex text-decoration-none rounded">Daftar pajak
