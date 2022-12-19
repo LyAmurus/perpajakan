@@ -75,7 +75,7 @@
                                                 Pajak
                                                 Kendaraan</a>
                                         </li>
-                                        <li><a href="daftarpajakpbb.html"
+                                        <li><a href="daftarpajakpbb.php"
                                                 class="link-dark d-inline-flex text-decoration-none rounded">Daftar
                                                 pajak
                                                 Tanah dan Bangunan</a>

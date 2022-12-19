@@ -67,7 +67,7 @@
                                         <li><a href="daftarpajakkendaraan.html" class="link-dark d-inline-flex text-decoration-none rounded">Daftar Pajak
                                                 Kendaraan</a>
                                         </li>
-                                        <li><a href="daftarpajakpbb.html" class="link-dark d-inline-flex text-decoration-none rounded">Daftar pajak
+                                        <li><a href="daftarpajakpbb.php" class="link-dark d-inline-flex text-decoration-none rounded">Daftar pajak
                                             Tanah dan Bangunan</a>
                                     </li>
                                     </ul>
