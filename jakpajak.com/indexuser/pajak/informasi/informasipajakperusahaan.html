@@ -8,14 +8,40 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/icon" href="assets/images/favicon.ico"/>
+    <!-- Font Awesome -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">    
+    <!-- Slick slider -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/> 
+    <!-- Fancybox slider -->
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="screen" /> 
+    <!-- Animate css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css"/> 
+    <!-- Progress bar  -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-progressbar-3.3.4.css"/> 
+     <!-- Theme color -->
+    <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
+
+    <!-- Main Style -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- Fonts -->
+
+    <!-- Open Sans for body font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- Lato for Title -->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-    </script>
+    </script> 
     <title>Document</title>
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 bg-secondary">
     <header>
         <nav class="navbar navbar-dark bg-secondary fixed-top">
             <div class="container-fluid">
@@ -114,8 +140,264 @@
         </nav>
     </header>
 
-    <main class="mt-3 mb-5">
-        <!--buat bagian utama taruh disini-->
+    <main class="mb-5">
+  <!-- BEGAIN PRELOADER -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <!-- END PRELOADER -->
+
+  <!-- SCROLL TOP BUTTON -->
+  <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+  <!-- END SCROLL TOP BUTTON -->
+ 
+
+  <!-- Start slider -->
+  <section id="slider">
+    <div class="main-slider">
+      <div class="single-slide">
+        <img src="assets/images/slider-1.jpg" alt="img">
+        <div class="slide-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <div class="slide-article">
+                  <h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">Apakah Bayar Pajak Itu Wajib?</h1>
+                  <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">Pajak adalah iuran atau pungutan wajib yang harus dibayar oleh rakyat (wajib pajak) kepada negara berdasarkan undang-undang, dimana uang pajak tersebut akan digunakan untuk kepentingan pemerintah dan kesejahteraan masyarakat umum</p>
+                  <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#">Read More</a>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="slider-img wow fadeInUp">
+                  <img src="assets/images/person1.png" alt="business man">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="single-slide">
+        <img src="assets/images/slider-3.jpg" alt="img">
+        <div class="slide-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <div class="slide-article">
+                  <h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">PERATURAN PERPAJAKAN</h1>
+                  <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">Keputusan Menteri Keuangan - 61/KM.10/2022 - 60/KM.10/2022 - 59/KM.10/2022 - 57/KM.10/2022</p>
+                  <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#">Read More</a>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="slider-img wow fadeInUp">
+                  <img src="assets/images/person2.png" alt="business man">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>          
+    </div>
+  </section>
+  <!-- End slider -->
+
+  <!-- Start Feature -->
+  <section id="feature">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-area">
+            <h2 class="title">Fitur JakPajak</h2>
+            <span class="line"></span>
+            <p>Terdapat banyak fitur yang terdapat pada website JakPajak.com</p>
+          </div>
+        </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="single-feature wow zoomIn">
+                  <i class="fa fa-mobile feature-icon"></i>
+                  <h4 class="feat-title">Akun</h4>
+                  <p>Berisi tentang data pengguna website JakPajak.com</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="single-feature wow zoomIn">
+                  <i class="fa fa-gears feature-icon"></i>
+                  <h4 class="feat-title">Pendataan</h4>
+                  <p>Daftar Pajak Penghasilan</p>
+                  <p>Daftar Pajak Perusahaan</p>
+                  <p>Daftar Pajak Kendaraan</p>
+                  <p>Daftar Pajak Tanah dan Bangunan</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="single-feature wow zoomIn">
+                  <i class="fa fa-code feature-icon"></i>
+                  <h4 class="feat-title">Informasi</h4>
+                  <p>Pajak Penghasilan</p>
+                  <p>Pajak Perusahaan</p>
+                  <p>Pajak Kendaraan</p>
+                  <p>Pajak Tanah dan Bangunan</p>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Feature -->
+
+  <!-- Start about  -->
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-area">
+            <h2 class="title">Hak dan Kewajiban sebagai Wajib Pajak</h2>
+            <span class="line"></span>
+            <p>Setiap negara menerapkan kewajiban pajak untuk setiap warganya. Orang yang berkewajiban membayar pajak biasa disebut dengan Wajib Pajak yang identik dengan kartu identitas pajaknya atau biasa disebut dengan Nomor Pokok Wajib Pajak (NPWP).</p>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="about-content">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="our-skill">
+                  <h3>Hak Para Wajib Pajak</h3>                  
+                  <div class="our-skill-content">
+                  <p>1. Hak untuk dilakukan pemeriksaan.</p> 
+                  <p>2. Hak mengajukan keberatan.</p> 
+                  <p>3. Hak atas kelebihan pembayaran pajak.</p>  
+                  <p>4. Hak untuk pengangsuran.</p> 
+                  <p>5. Hak Kerahasiaan.</p>  
+                  <p>6. Hak pengurangan PBB.</p>  
+                  <p>7. Hak pembebasan pajak.</p>
+                  </div>                  
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="why-choose-us">
+                  <h3>Kewajiban Para Wajib Pajak</h3>
+                  <div class="our-skill-content">
+                    <p>1. Wajib Mendaftarkan diri.</p> 
+                    <p>2. Wajib memberi data.</p> 
+                    <p>3. Wajib pemeriksaan.</p>  
+                    <p>4. Wajib membayar.</p> 
+                    <p>5. Wajib melapor.</p>  
+                    </div>                  
+                  </div>
+                </div>
+      </div>
+    </div>
+  </section>
+  <!-- end about -->
+
+  <!-- Start Service -->
+  <section id="service">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-area">
+            <h2 class="title">Manfaat Pajak</h2>
+            <span class="line"></span>
+            <h3>Manfaat pajak untuk negara</h3>
+              <p>Pajak digunakan untuk pengeluaran negara yang bersifat self-liquiditing, misalnya untuk pengeluaran proyek produktif.</p>
+              <p>Pajak juga digunakan untuk pengeluaran reproduktif seperti pengeluaran yang akan memberikan keuntungan dalam segi ekonomi bagi masyarakat. misalnya seperti pertanian dan lain-lain.</p>
+             
+            <h3>Manfaat Pajak untuk Masyarakat</h3>
+              <p>Pajak digunakan untuk membangun infrastruktur seperti rumah sakit, jalanan, sekolah, dan fasilitas umum lainnya.</p>
+              <p>Pajak digunakan untuk memberi subsidi bahan bakar minyak dan juga subsidi pangan.</p>
+             
+            <h3>Pengalokasian Dana Pajak</h3>
+              <p>Meningkatkan akses dan kualitas pelayanan publik lewat implementasi e-government yang terintegrasi dengan 623 IP.</p>
+              <p>Meningkatkan akuntabilitas kinerja birokrasi dengan mengimplementasi Sistem Akuntabilitas Kinerja Instansi Pemerintahan di 581 Ip.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Service -->
+
+  <!-- Start Pricing table -->
+  <section id="pricing-table">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-area">
+            <h2 class="title">Dokumen Peraturan</h2>
+            <span class="line"></span>
+            <p>Dasar Hukum Pajak</p>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="pricing-table-content">
+            <div class="row">
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-table-price wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
+                  <div class="price-header">
+                    <span class="price-title">Keputusan Menteri Keuangan</span>
+                    <div class="price">
+                      <h3>61/KM.10/2022</h3>
+                    </div>
+                  </div>
+                  <div class="price-article">
+                    <ul>
+                      <li>NILAI KURS SEBAGAI DASAR PELUNASAN BEA MASUK, PAJAK PERTAMBAHAN NILAI BARANG DAN JASA DAN PAJAK PENJUALAN ATAS BARANG MEWAH, BEA KELUAR, DAN PAJAK PENGHASILAN YANG BERLAKU UNTUK TANGGAL 23 NOVEMBER 2022 SAMPAI DENGAN 29 NOVEMBER 2022</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-table-price wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.75s">
+                  <div class="price-header">
+                    <span class="price-title">Keputusan Menteri Keuangan</span>
+                    <div class="price">
+                      <h3>60/KM.10/2022</h3>
+                    </div>
+                  </div>
+                  <div class="price-article">
+                    <ul>
+                      <li>
+                        NILAI KURS SEBAGAI DASAR PELUNASAN BEA MASUK, PAJAK PERTAMBAHAN NILAI BARANG DAN JASA DAN PAJAK PENJUALAN ATAS BARANG MEWAH, BEA KELUAR, DAN PAJAK PENGHASILAN YANG BERLAKU UNTUK TANGGAL 16 NOVEMBER 2022 SAMPAI DENGAN 22 NOVEMBER 2022</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-table-price wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.75s">
+                  <div class="price-header">
+                    <span class="price-title">Keputusan Menteri Keuangan</span>
+                    <div class="price">
+                      <h3>59/KM.10/2022</h3>
+                    </div>
+                  </div>
+                  <div class="price-article">
+                    <ul>
+                      <li>NILAI KURS SEBAGAI DASAR PELUNASAN BEA MASUK, PAJAK PERTAMBAHAN NILAI BARANG DAN JASA DAN PAJAK PENJUALAN ATAS BARANG MEWAH, BEA KELUAR, DAN PAJAK PENGHASILAN YANG BERLAKU UNTUK TANGGAL 9 NOVEMBER 2022 SAMPAI DENGAN 15 NOVEMBER 2022</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-table-price wow fadeInUp" data-wow-duration="1.15s" data-wow-delay="1.15s">
+                  <div class="price-header">
+                    <span class="price-title">Keputusan Menteri Keuangan</span>
+                    <div class="price">
+                      <h3>57/KM.10/2022</h3>
+                    </div>
+                  </div>
+                  <div class="price-article">
+                    <ul>
+                      <li>NILAI KURS SEBAGAI DASAR PELUNASAN BEA MASUK, PAJAK PERTAMBAHAN NILAI BARANG DAN JASA DAN PAJAK PENJUALAN ATAS BARANG MEWAH, BEA KELUAR, DAN PAJAK PENGHASILAN YANG BERLAKU UNTUK TANGGAL 2 NOVEMBER 2022 SAMPAI DENGAN 8 NOVEMBER 2022</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Pricing table -->
     </main>
     
 
@@ -201,7 +483,29 @@
         </div>
         <!-- Copyright -->
     </footer>
-    
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>    
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <!-- Bootstrap -->
+  <script src="assets/js/bootstrap.js"></script>
+  <!-- Slick Slider -->
+  <script type="text/javascript" src="assets/js/slick.js"></script>    
+  <!-- mixit slider -->
+  <script type="text/javascript" src="assets/js/jquery.mixitup.js"></script>
+  <!-- Add fancyBox -->        
+  <script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
+ <!-- counter -->
+  <script src="assets/js/waypoints.js"></script>
+  <script src="assets/js/jquery.counterup.js"></script>
+  <!-- Wow animation -->
+  <script type="text/javascript" src="assets/js/wow.js"></script> 
+  <!-- progress bar   -->
+  <script type="text/javascript" src="assets/js/bootstrap-progressbar.js"></script>  
+  
+ 
+  <!-- Custom js -->
+  <script type="text/javascript" src="assets/js/custom.js"></script>
 </body>
 
 </html>
