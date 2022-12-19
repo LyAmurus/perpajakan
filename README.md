@@ -1,11 +1,2 @@
 # SISTEM-BASIS-DATA
-
-jadi gini dek
-kesini ye <br>
-
-
-
-raaturuonly.my.id/jakpajak
-
-
-ini diituin,terus itu di anuin,nah nanti hasilnya di iniin
+Web ini dibuat untuk memenuhi tugas akhir mata kuliah Sistem Basis Data. Web ini memiliki tema yang berkaitan dengan aplikasi perpajakan dengan inti utama fitur yang diutamakan pembuatannya ialah sistem Create Update Delete (CRUD). 
