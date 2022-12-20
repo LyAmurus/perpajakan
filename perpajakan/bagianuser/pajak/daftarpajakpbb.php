@@ -26,8 +26,8 @@
         <nav class="navbar navbar-dark bg-secondary fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand text-warning" href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-coin"
-                        viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-coin" viewBox="0 0 16 16">
                         <path
                             d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9H5.5zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518l.087.02z" />
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -54,55 +54,73 @@
                             </li>
                             <li class="border-top"></li>
                             <li class="mb-1 text-info">
-                                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-                                    data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                                <button
+                                    class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                                    data-bs-toggle="collapse" data-bs-target="#dashboard-collapse"
+                                    aria-expanded="false">
                                     Pendataan
                                 </button>
                                 <div class="collapse" id="dashboard-collapse">
                                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                        <li><a href="daftarpajakindividu.php" class="link-dark d-inline-flex text-decoration-none rounded">Daftar Pajak
+                                        <li><a href="daftarpajakindividu.php"
+                                                class="link-dark d-inline-flex text-decoration-none rounded">Daftar
+                                                Pajak
                                                 Penghasilan</a>
                                         </li>
-                                        <li><a href="daftarpajakperusahaan.php" class="link-dark d-inline-flex text-decoration-none rounded">Daftar Pajak
+                                        <li><a href="daftarpajakperusahaan.php"
+                                                class="link-dark d-inline-flex text-decoration-none rounded">Daftar
+                                                Pajak
                                                 Perusahaan</a></li>
-                                        <li><a href="daftarpajakkendaraan.php" class="link-dark d-inline-flex text-decoration-none rounded">Daftar Pajak
+                                        <li><a href="daftarpajakkendaraan.php"
+                                                class="link-dark d-inline-flex text-decoration-none rounded">Daftar
+                                                Pajak
                                                 Kendaraan</a>
                                         </li>
-                                        <li><a href="daftarpajakpbb.php" class="link-dark d-inline-flex text-decoration-none rounded">Daftar pajak
-                                            Tanah dan Bangunan</a>
-                                    </li>
+                                        <li><a href="daftarpajakpbb.php"
+                                                class="link-dark d-inline-flex text-decoration-none rounded">Daftar
+                                                pajak
+                                                Tanah dan Bangunan</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="mb-1 text-info">
-                                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                                <button
+                                    class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
                                     data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
                                     Informasi
                                 </button>
                                 <div class="collapse" id="orders-collapse">
                                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                        <li><a href="informasi/informasipajakindividu.html" class="link-dark d-inline-flex text-decoration-none rounded">Pajak Penghasilan</a>
+                                        <li><a href="informasi/informasipajakindividu.html"
+                                                class="link-dark d-inline-flex text-decoration-none rounded">Pajak
+                                                Penghasilan</a>
                                         </li>
                                         <li><a href="informasi/informasipajakperusahaan.html"
-                                                class="link-dark d-inline-flex text-decoration-none rounded">Pajak Perusahaan</a>
+                                                class="link-dark d-inline-flex text-decoration-none rounded">Pajak
+                                                Perusahaan</a>
                                         </li>
-                                        <li><a href="informasi/informasipajakkendaraan.html" class="link-dark d-inline-flex text-decoration-none rounded">Pajak Kendaraan</a>
+                                        <li><a href="informasi/informasipajakkendaraan.html"
+                                                class="link-dark d-inline-flex text-decoration-none rounded">Pajak
+                                                Kendaraan</a>
                                         </li>
                                         <li><a href="informasi/informasipajakpbb.html"
-                                                class="link-dark d-inline-flex text-decoration-none rounded">Pajak Tanah dan Bangunan</a>
+                                                class="link-dark d-inline-flex text-decoration-none rounded">Pajak Tanah
+                                                dan Bangunan</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="border-top my-3"></li>
                             <li class="mb-1 text-info">
-                                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                                <button
+                                    class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
                                     data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
                                     Akun
                                 </button>
                                 <div class="collapse" id="account-collapse">
                                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="profile/profil.php"
+                                        <li><a href="profile/profil.php"
                                                 class="link-dark d-inline-flex text-decoration-none rounded">Profile</a>
                                         </li>
                                         <li><a href="profile/updateprofile.php"
@@ -124,7 +142,7 @@
     </header>
 
     <main class="mt-3 mb-5">
-        <nav class="mt-5 container-fluid">
+        <div class="mt-5 mb-5 container-fluid table-responsive">
             <table class="table table-hover table-striped-columns caption-top">
                 <caption>Berisi daftar pajak tanah dan bangunan yang telah diinputkan</caption>
                 <thead>
@@ -206,7 +224,7 @@
                                         <input type="text" class="form-control" name="harga_bangunan"
                                             value="<?=$user_data['harga_bangunan']?>">
                                     </div>
-                                    
+
                                 </div>
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-success" name="update">Update</button>
@@ -266,19 +284,14 @@
                 </div>
             </div>
             <!--FORM AKHIR DATA-->
-
-            <div class="d-grid gap-2 col-6 mx-auto">
-                <a class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#adddata">Tambah
-                    Data</a>
-                <a class="btn btn-warning" type="button" href="../homeuser.html">Back</a>
-            </div>
-            <!-- <div class="d-grid gap-2 col-6 mx-auto">
-                <a class="btn btn-success" type="button" href="inputdata/inputpajakindividu.php">Tambah Data</a>
-                <a class="btn btn-warning" type="button" href="../homeuser.html">Back</a>
-            </div> -->
-        </nav>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <a class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#adddata">Tambah
+                Data</a>
+            <a class="btn btn-warning" type="button" href="../homepageuser.php">Back</a>
+        </div>
     </main>
-    
+
 
     <footer class="bg-light text-center text-white footer mt-auto">
         <!-- Grid container -->
@@ -342,9 +355,9 @@
                     </svg>
                     <p>Mulyadi</p>
                 </a>
-                <a class="btn text-white btn-floating m-1" style="background-color: #333333;" href="https://github.com/Andisurya01"
-                    role="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-github" viewBox="0 0 16 16">
+                <a class="btn text-white btn-floating m-1" style="background-color: #333333;"
+                    href="https://github.com/Andisurya01" role="button"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
                         <path
                             d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                     </svg>
@@ -363,11 +376,11 @@
         <!-- Copyright -->
     </footer>
     <script type="text/javascript">
-    function delete_data(uid) {
-        if (confirm('Yakin ingin hapus?')) {
-            window.location.href = 'deletedata/deletepajakpbb.php?id=' + uid;
+        function delete_data(uid) {
+            if (confirm('Yakin ingin hapus?')) {
+                window.location.href = 'deletedata/deletepajakpbb.php?id=' + uid;
+            }
         }
-    }
     </script>
 </body>
 

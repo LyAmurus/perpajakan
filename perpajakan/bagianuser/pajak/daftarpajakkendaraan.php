@@ -20,13 +20,12 @@ $result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5 WHERE userna
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-<<<<<<< HEAD
-        </script>
+    </script>
     <title>Document</title>
-=======
+    =======
     </script>
     <title>Pajak PBB</title>
->>>>>>> e56ca75853f4406ae118680359b1dc8bf40093b7
+    >>>>>>> e56ca75853f4406ae118680359b1dc8bf40093b7
 </head>
 
 
@@ -129,7 +128,7 @@ $result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5 WHERE userna
                                 </button>
                                 <div class="collapse" id="account-collapse">
                                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="profile/profil.php"
+                                        <li><a href="profile/profil.php"
                                                 class="link-dark d-inline-flex text-decoration-none rounded">Profile</a>
                                         </li>
                                         <li><a href="profile/updateprofile.php"
@@ -152,10 +151,11 @@ $result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5 WHERE userna
 
 
     <main class="mt-3 mb-5">
-        <nav class="mt-5 container-fluid">
+        <div class="mt-5 mb-5 container-fluid table-responsive">
             <!-- tombol pertama -->
             <div id="nurunin-mb-1" class="d-grid gap-2 col-6 mx-auto mb-4 pt-4">
-                <button onclick="showHidden('show-motor-1', 'tambah-data-1', 'nurunin-mb-1')" class="btn btn-primary" type="button">Motor
+                <button onclick="showHidden('show-motor-1', 'tambah-data-1', 'nurunin-mb-1')" class="btn btn-primary"
+                    type="button">Motor
                     1 Tahun</button>
             </div>
 
@@ -185,12 +185,14 @@ $result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5 WHERE userna
                         <td>
                             <a class='btn btn-warning' href="#" data-bs-toggle="modal"
                                 data-bs-target="#updata<?php echo $no ?>">Edit</a>
-                            <a class='btn btn-danger' href="./deletedata/pajakkendaraan/deletemotor1.php?id=<?= $user_data['id']?>" onclick="return confirm('Yakin ingin hapus?')">Delete</a>
+                            <a class='btn btn-danger'
+                                href="./deletedata/pajakkendaraan/deletemotor1.php?id=<?= $user_data['id']?>"
+                                onclick="return confirm('Yakin ingin hapus?')">Delete</a>
                             <!-- <a onclick=delete_data(<?=$user_data['id']?>) class='btn btn-danger'>Delete</a> -->
                         </td>
                     </tr>
                 </tbody>
-                        <!--FORM UPDATE-->
+                <!--FORM UPDATE-->
                 <div class="modal fade" id="updata<?= $no ?>" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -221,7 +223,7 @@ $result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5 WHERE userna
                                         <input type="text" class="form-control" name="njkb"
                                             value="<?=$user_data['njkb']?>">
                                     </div>
-                                    
+
                                 </div>
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-success" name="update">Update</button>
@@ -275,12 +277,14 @@ $result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5 WHERE userna
             <!--FORM AKHIR DATA-->
 
             <div class="d-grid gap-2 col-6 mx-auto mb-4">
-                <a style="display: none;" id="tambah-data-1" class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#adddata">Tambahh
+                <a style="display: none;" id="tambah-data-1" class="btn btn-success" type="button"
+                    data-bs-toggle="modal" data-bs-target="#adddata">Tambahh
                     Data</a>
             </div>
 
             <!-- tombol kedua -->
-            <div id="nurunin-mb-2" class="d-grid gap-2 col-6 mx-auto mb-4" onclick="showHidden('show-motor-5', 'tambah-data-2', 'nurunin-mb-2')">
+            <div id="nurunin-mb-2" class="d-grid gap-2 col-6 mx-auto mb-4"
+                onclick="showHidden('show-motor-5', 'tambah-data-2', 'nurunin-mb-2')">
                 <a class="btn btn-primary" type="button">Motor 5 Tahun</a>
             </div>
 
@@ -308,7 +312,9 @@ $result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5 WHERE userna
                         <td>
                             <a class='btn btn-warning' href="#" data-bs-toggle="modal"
                                 data-bs-target="#updata2<?php echo $no ?>">Edit</a>
-                            <a class='btn btn-danger' href="./deletedata/pajakkendaraan/deletemotor5.php?id=<?= $user_data['id']?>" onclick="return confirm('Yakin ingin hapus?')">Delete</a>
+                            <a class='btn btn-danger'
+                                href="./deletedata/pajakkendaraan/deletemotor5.php?id=<?= $user_data['id']?>"
+                                onclick="return confirm('Yakin ingin hapus?')">Delete</a>
                             <!-- <a onclick=delete_data(<?=$user_data['id']?>) class='btn btn-danger'>Delete</a> -->
                         </td>
                     </tr>
@@ -335,13 +341,13 @@ $result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5 WHERE userna
                                         <input type="text" class="form-control" name="nama"
                                             value="<?=$user_data['nama']?>">
                                     </div>
-                                   
+
                                     <div class="mb-3">
                                         <label class="form-label">Nilai Jual Motor</label>
                                         <input type="text" class="form-control" name="njkb"
                                             value="<?=$user_data['njkb']?>">
                                     </div>
-                                    
+
                                 </div>
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-success" name="update">Update</button>
@@ -372,7 +378,7 @@ $result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5 WHERE userna
                                     <label class="form-label">Nama pemilik</label>
                                     <input type="text" class="form-control" name="nama">
                                 </div>
-    
+
                                 <div class="mb-3">
                                     <label class="form-label">Nilai Jual Motor</label>
                                     <input type="text" class="form-control" name="njkb">
@@ -392,13 +398,15 @@ $result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5 WHERE userna
             <!--FORM AKHIR DATA-->
 
             <div class="d-grid gap-2 col-6 mx-auto mb-4">
-                <a style="display: none;" id="tambah-data-2" class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#adddata2">Tambahh
+                <a style="display: none;" id="tambah-data-2" class="btn btn-success" type="button"
+                    data-bs-toggle="modal" data-bs-target="#adddata2">Tambahh
                     Data</a>
             </div>
 
             <!-- tombol ketiga -->
             <div id="nurunin-mb-3" class="d-grid gap-2 col-6 mx-auto mb-4 pt-4">
-                <button onclick="showHidden('show-mobil-1', 'tambah-data-3', 'nurunin-mb-3')" class="btn btn-primary" type="button">Mobil
+                <button onclick="showHidden('show-mobil-1', 'tambah-data-3', 'nurunin-mb-3')" class="btn btn-primary"
+                    type="button">Mobil
                     1 Tahun</button>
             </div>
 
@@ -428,15 +436,17 @@ $result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5 WHERE userna
                         <td>
                             <a class='btn btn-warning' href="#" data-bs-toggle="modal"
                                 data-bs-target="#updata3<?php echo $no ?>">Edit</a>
-                            <a class='btn btn-danger' href="./deletedata/pajakkendaraan/deletemobil1.php?id=<?= $user_data['id']?>" onclick="return confirm('Yakin ingin hapus?')">Delete</a>
+                            <a class='btn btn-danger'
+                                href="./deletedata/pajakkendaraan/deletemobil1.php?id=<?= $user_data['id']?>"
+                                onclick="return confirm('Yakin ingin hapus?')">Delete</a>
                             <!-- <a onclick=delete_data(<?=$user_data['id']?>) class='btn btn-danger'>Delete</a> -->
                         </td>
                     </tr>
                 </tbody>
-            
 
-            <!--FORM UPDATE-->
-            <div class="modal fade" id="updata3<?= $no ?>" data-bs-backdrop="static" data-bs-keyboard="false"
+
+                <!--FORM UPDATE-->
+                <div class="modal fade" id="updata3<?= $no ?>" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -466,7 +476,7 @@ $result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5 WHERE userna
                                         <input type="text" class="form-control" name="njkb"
                                             value="<?=$user_data['njkb']?>">
                                     </div>
-                                    
+
                                 </div>
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-success" name="update">Update</button>
@@ -520,13 +530,15 @@ $result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5 WHERE userna
             <!--FORM AKHIR DATA-->
 
             <div class="d-grid gap-2 col-6 mx-auto mb-4">
-                <a style="display: none;" id="tambah-data-3" class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#adddata3">Tambahh
+                <a style="display: none;" id="tambah-data-3" class="btn btn-success" type="button"
+                    data-bs-toggle="modal" data-bs-target="#adddata3">Tambahh
                     Data</a>
             </div>
 
-            <!-- tombol ke empat -->    
+            <!-- tombol ke empat -->
             <div id="nurunin-mb-4" class="d-grid gap-2 col-6 mx-auto mb-4 pt-4">
-                <button onclick="showHidden('show-mobil-5', 'tambah-data-4', 'nurunin-mb-4')" class="btn btn-primary" type="button">Mobil
+                <button onclick="showHidden('show-mobil-5', 'tambah-data-4', 'nurunin-mb-4')" class="btn btn-primary"
+                    type="button">Mobil
                     5 Tahun</button>
             </div>
 
@@ -554,7 +566,9 @@ $result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5 WHERE userna
                         <td>
                             <a class='btn btn-warning' href="#" data-bs-toggle="modal"
                                 data-bs-target="#updata4<?php echo $no ?>">Edit</a>
-                            <a class='btn btn-danger' href="./deletedata/pajakkendaraan/deletemobil5.php?id=<?= $user_data['id']?>" onclick="return confirm('Yakin ingin hapus?')">Delete</a>
+                            <a class='btn btn-danger'
+                                href="./deletedata/pajakkendaraan/deletemobil5.php?id=<?= $user_data['id']?>"
+                                onclick="return confirm('Yakin ingin hapus?')">Delete</a>
                             <!-- <a onclick=delete_data(<?=$user_data['id']?>) class='btn btn-danger'>Delete</a> -->
                         </td>
                     </tr>
@@ -581,13 +595,13 @@ $result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5 WHERE userna
                                         <input type="text" class="form-control" name="nama"
                                             value="<?=$user_data['nama']?>">
                                     </div>
-                                   
+
                                     <div class="mb-3">
                                         <label class="form-label">Nilai Jual Mobil</label>
                                         <input type="text" class="form-control" name="njkb"
                                             value="<?=$user_data['njkb']?>">
                                     </div>
-                                    
+
                                 </div>
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-success" name="update">Update</button>
@@ -618,7 +632,7 @@ $result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5 WHERE userna
                                     <label class="form-label">Nama pemilik</label>
                                     <input type="text" class="form-control" name="nama">
                                 </div>
-    
+
                                 <div class="mb-3">
                                     <label class="form-label">Nilai Jual Mobil</label>
                                     <input type="text" class="form-control" name="njkb">
@@ -637,18 +651,12 @@ $result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5 WHERE userna
             </div>
             <!--FORM AKHIR DATA-->
 
-            <div class="d-grid gap-2 col-6 mx-auto mb-4">
-                <a style="display: none;" id="tambah-data-4" class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#adddata4">Tambahh
-                    Data</a>
-                <a class="btn btn-warning" type="button" href="../homepageuser.php">Back</a>
-            </div>
-
-
-            <!-- <div class="d-grid gap-2 col-6 mx-auto">
-                <a class="btn btn-success" type="button" href="inputdata/inputpajakindividu.php">Tambah Data</a>
-                <a class="btn btn-warning" type="button" href="../homeuser.html">Back</a>
-            </div> -->
-        </nav>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <a class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#adddata">Tambah
+                Data</a>
+            <a class="btn btn-warning" type="button" href="../homepageuser.php">Back</a>
+        </div>
     </main>
 
 
@@ -714,9 +722,9 @@ $result4 = mysqli_query($conn, "SELECT * FROM data_kendaraan_mobil5 WHERE userna
                     </svg>
                     <p>Mulyadi</p>
                 </a>
-                <a class="btn text-white btn-floating m-1" style="background-color: #333333;" href="https://github.com/Andisurya01"
-                    role="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-github" viewBox="0 0 16 16">
+                <a class="btn text-white btn-floating m-1" style="background-color: #333333;"
+                    href="https://github.com/Andisurya01" role="button"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
                         <path
                             d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                     </svg>
